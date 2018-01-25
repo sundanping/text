@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex布局</title>
+</head>
+<body>
+    <style type="text/css">
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .demo2{
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    .demo2>div{
+        background-color: #dffad3;
+        width: 40%;
+    }
+    .demo1{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .demo1>div{
+        flex:1;
+        background-color: #666;
+    }
+    .demo1>div:nth-child(2){
+        margin-left: 20px;
+    }
+    .demo3{
+        height: 300px;
+        display: flex;
+        background-color: palegreen;
+        justify-content: center;
+        align-items: center;
+        align-content: stretch;
+    }
+     .demo3>div{
+        /*margin: auto;*/
+        width: 20%;
+        flex-grow: 1;
+        height: 50%;
+        background-color: #aaa;
+    }
+.demo3>div:nth-child(2){
+    flex-grow: 2;
+    background-color: #acd;
+}
+    </style>
+
+     <div class='demo3'>
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+    </div>
+    <div class='demo2'>
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+    </div>
+    <div id='demo1' class='demo1'>
+        <div>01</div>
+        <div>02</div>
+        <div onclick="obj.play()">03www</div>
+    </div>
+</body>
+<script type="text/javascript">
+
+
+
+function People(name)
+{
+  this.name=name;
+  //对象方法
+  this.Introduce=function(){
+    // alert("My name is "+name);
+    console.log(23)
+  }
+}
+//类方法
+People.Run=function(){
+  // alert("I can run");
+}
+//原型方法
+People.prototype.IntroduceChinese=function(){
+  // alert("我的名字是"+this.name);
+}
+
+ 
+function baseClass()
+{
+  this.showMsg = function()
+  {
+     alert("baseClass::showMsg");   
+  }
+}
+
+function extendClass()
+{
+}
+
+extendClass.prototype = new baseClass();
+var instance = new extendClass();
+instance.showMsg(); // 显示baseClass::showMsg
+
+
+// p1.Introduce();
+
+// People.Run();
+
+// p1.IntroduceChinese();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     var ask = function (){
+            console.log(234)
+        }
+        onload=function(){
+
+       var hoge=function (){}
+        console.log(hoge._proto_)
+
+        }
+
+        console.log(document.getElementById('demo1').getElementsByTagName('div')[1])
+       
+        var obj = function(name,age){
+            this.name=name;
+            this.age={age:age};
+            this.option={size:'small',type:'old'}
+            this.session = Object.assign({},this.option,this.age)
+            console.log(this.session)
+        }
+        obj.prototype={
+            play:function(){
+                alert('prototype')
+            }
+        }
+        obj('ask',12)
+
+        var testFunction=function(){
+     console.log("guoyansi");
+ }
+</script>
+</html>
