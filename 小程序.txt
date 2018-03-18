@@ -1,0 +1,6 @@
+wx64b01e998aa176d9
+8d122d01b02059b149c0d0fea8543509
+pages/addCgi/addCgi
+
+https://www.cnblogs.com/WQLong/p/7798822.html
+ ngrok -config=ngrok.cfg -subdomain xxx 80
